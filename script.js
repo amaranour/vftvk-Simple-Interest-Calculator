@@ -15,18 +15,30 @@ function compute()
     // input to an integer 
     var year = new Date().getFullYear() + parseInt(years);
 
-    document.getElementById("result").innerHTML= "If you deposit "+principal+",\<br\>at an interest rate of "+rate+"%\<br\>You will receive an amount of "+amount+",\<br\>in the year "+year+"\<br\>"
-    if (parseInt(principal) <= 0 ) {
+    //document.getElementById("result").innerHTML= "If you deposit "+principal+",\<br\>at an interest rate of "+rate+"%\<br\>You will receive an amount of "+amount+",\<br\>in the year "+year+"\<br\>";
+
+    if (principal <= 0) {
         alert ("Enter a positive number");
-        principal.focus()
+        principal.focus();
+        return false ;
+
+    } 
+    
+   
+    else {
+     
+        document.getElementById("result").innerHTML = "If you deposit "+principal+",\<br\>at an interest rate of "+rate+"%\<br\>You will receive an amount of "+amount+",\<br\>in the year "+year+"\<br\>";
+    
     }
+    return true;
+    
 }
     // write a function the reads the value of the range slider
     // and displays it next to slider <span>
  
 function updateRate() {
         
-        var rateVal = document.getElementById("rate_val").value;
+        var rateVal = document.getElementById("rate").value;
         document.getElementById("rate_val").innerText = rateVal;    
     
 }
